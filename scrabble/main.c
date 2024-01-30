@@ -27,7 +27,7 @@ int main() {
         size_t wordLength = strlen(word);  // To find the exact length of the word array
 
         if ((d == 'H' && x + wordLength > n) || (d == 'V' && y + wordLength > n)) {      // if word extends board, it does not stay valid
-            printf("Invalid word placement:  (%d,%d) %c, %s\n", x, y, d, word);
+            printf("Invalid word placement: (%d,%d) %c, %s\n", x, y, d, word);
             valid = false;
             continue;
         }
@@ -58,7 +58,7 @@ int main() {
 
         if (matches == 0 && i > 0) {
             valid = false;
-            printf("Invalid word placement:  (%d,%d) %c, %s\n", x, y, d, word);
+            printf("Invalid word placement: (%d,%d) %c, %s\n", x, y, d, word);
 
         } else {
             valid = true;
@@ -80,7 +80,7 @@ int main() {
 
     for (int i = 0; i < n; i++) {           //Printing out the final board
         for (int j = 0; j < n; j++) {
-            printf("%c ", board[i][j]);
+            printf("%c", board[i][j]);
         }
         printf("\n");
     }
