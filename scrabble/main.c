@@ -85,37 +85,20 @@ int main() {
         printf("\n");
     }
 
-    /*int f;
-    scanf("%d", &f);
-
-    for (int i = 0; i < f; i++) {
-        int b, a;
-        char l;
-        scanf("%d %c %d", &b, &l, &a);
-    }
-
-    for (int g = 0; g < n; g++) {
-        for (int h = 0; h < n; h++) {
-            if (board[g][h] == 1) {
-
-            }
-        }
-    }*/
 
     int f;
     int b, a;
     char l;
     scanf("%d", &f);
 
-    for (int i = 0; i < f; i++) {
+    for (int m = 0; m < f; m++) {
         scanf("%d %c %d", &b, &l, &a);
     }
 
     for (int row = 0; row < n; row++) {
         for (int col = 0; col < n; col++) {
             if (board[row][col] == l) {
-                // Check if the word can be placed horizontally
-                if (col - b >= 0 && col + a < n) {
+                if (col - b >= 0 && col + a < n) {     // Check if the word can be placed horizontally
                     bool canPlaceHorizontally = true;
                     for (int k = col - b; k <= col + a; k++) {
                         if (board[row][k] != '.' && board[row][k] != l) {
@@ -124,12 +107,11 @@ int main() {
                         }
                     }
                     if (canPlaceHorizontally) {
-                        printf("Place H at (%d,%d)\n", col - b, row);
+                        printf("Place horizontally at (%d,%d)\n", col, row);
                     }
                 }
 
-                // Check if the word can be placed vertically
-                if (row - b >= 0 && row + a < n) {
+                if (row - b >= 0 && row + a < n) {  // Check if the word can be placed vertically
                     bool canPlaceVertically = true;
                     for (int k = row - b; k <= row + a; k++) {
                         if (board[k][col] != '.' && board[k][col] != l) {
@@ -138,7 +120,7 @@ int main() {
                         }
                     }
                     if (canPlaceVertically) {
-                        printf("Place V at (%d,%d)\n", col, row - b);
+                        printf("Place vertically at (%d,%d)\n", col, row);
                     }
                 }
             }
